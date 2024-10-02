@@ -1,0 +1,40 @@
+\documentclass{beamer}
+\usepackage{preamble}
+
+\title[Théorie des groupes]
+{Utilisation de modules \LaTeX}
+
+\author{\texttt{$\backslash$usepackage\{Antoine\;de\;Lagrave\}}}
+
+\institute[]{
+    Introduction à \LaTeX{} \\
+    Département de physique \\
+    UDS / UQTR
+}
+
+\date[\today]
+
+\begin{document}
+
+    \setbeamercolor*{item}{fg=black}
+
+    \frame{\titlepage}
+
+    \input{sections/context}
+
+    \begin{frame}
+        \frametitle{Table des matières}
+        \tableofcontents
+    \end{frame}
+
+    \input{sections/personnalisation}
+
+    \input{sections/physicsmaths}
+
+    \input{sections/biblio}
+
+    \input{sections/graphsfigs}
+
+    \input{sections/tipsandtricks}
+
+\end{document}
