@@ -1,0 +1,21 @@
+texpreamble("\usepackage[charter]{mathdesign}");
+real L=80;
+
+pair e1 = (L,0);
+guide BZ = rotate(30)*(e1--rotate(60)*e1--rotate(2*60)*e1--rotate(3*60)*e1--rotate(4*60)*e1--rotate(5*60)*e1--cycle);
+filldraw(BZ, gray(0.9));
+dot(BZ);
+dot((0,0));
+label("$\Gamma$", (0,0), W);
+pair K = rotate(30)*e1;
+label("$K$", K, E);
+label("$K$", rotate(120)*K, W);
+label("$K$", rotate(-120)*K, S);
+pair Kp = rotate(-30)*e1;
+label("$K'$", Kp, E);
+label("$K'$", rotate(120)*Kp, NW);
+label("$K'$", rotate(-120)*Kp, W);
+draw((0,0)--(1.5*L,0), arrow=EndArrow());
+draw((0,0)--(0, 1.5*L), arrow=EndArrow());
+label("$k_x$", (1.5*L,0), E);
+label("$k_y$", (0,1.5*L), N);

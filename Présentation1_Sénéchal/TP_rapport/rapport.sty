@@ -1,0 +1,96 @@
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{amsmath} % ajoute des fonctionnalités mathématiques
+\usepackage{amssymb} % ajoute des symboles mathématiques plus rares
+\usepackage{amsthm} % permet la défnition d'environnements de théorèmes, exemples, remarques, etc.
+\usepackage{bm} % permet d'utiliser des caractères gras pour les lettres grecques dans les formules
+
+\usepackage{graphicx} % permet l'inclusion des figures et graphiques
+
+\usepackage[svgnames]{xcolor} % définit les couleurs
+\definecolor{LightRed}{rgb}{0.7,0.1,0}
+\definecolor{HeavyBlue}{rgb}{0,0,0.7}
+
+\usepackage{fancybox} % définit des formes de boîtes
+
+\usepackage[format=hang,margin=5mm,font=small,labelfont=bf,labelsep=space]{caption}
+
+% \usepackage{mathpazo} % Utilise Palatino pour le texte et la police pazo pour les formules
+
+\tolerance=500
+\setlength{\emergencystretch}{2pt}
+%-----------------------------------------------------------------------------
+\usepackage{hyperref} 
+%\pdfcompresslevel=9 
+\hypersetup{ 
+     backref=true,    %permet d'ajouter des liens dans... 
+     pagebackref=true,%...les bibliographies 
+     hyperindex=true, %ajoute des liens dans les index. 
+     colorlinks=true, %colorise les liens 
+     breaklinks=true, %permet le retour  la ligne dans les liens trop longs 
+     urlcolor= blue,  %couleur des hyperliens 
+     linkcolor= HeavyBlue, %couleur des liens internes 
+     bookmarks=true,  %cr des signets pour Acrobat 
+     bookmarksopen=true,            %si les signets Acrobat sont crs, 
+}
+%-----------------------------------------------------------------------------
+\newif\ifbrouillon\brouillonfalse\DeclareOption{brouillon}{\brouillontrue}
+\ProcessOptions\relax
+
+\textwidth = 6.5 in % 6.5
+\textheight = 9 in % 8.5
+\oddsidemargin = 0 in
+\evensidemargin = 0 in
+\topmargin = -0.4 in % -0.25
+\headheight = 14pt
+\headsep = 0.2 in
+\parskip = 0.1in
+\parindent = 0.0in
+
+
+%-----------------------------------------------------------------------------
+% Tableaux
+\usepackage{array} % généralise certaines fonctions de tabulation
+\newcolumntype{C}{>{$\displaystyle}c<{$}}
+\newcolumntype{L}{>{$\displaystyle}l<{$}}
+\newcolumntype{R}{>{$\displaystyle}r<{$}}
+\renewcommand{\arraystretch}{1.5}
+\usepackage{dcolumn} % permet l'alignement sur le point décimal
+
+%-----------------------------------------------------------------------------
+% Format de titres de chapitres, sections et sous-sections
+\ifbrouillon\relax\else
+\usepackage{titlesec}
+\titleformat{\section}{\penalty-2000\vspace{0pt plus 20pt}{\color{LightSlateBlue}\titlerule[4pt]}\Large\bfseries\sffamily}{\thesection}{1em}{}[\vspace{2pt plus 2pt}{\color{LightSlateBlue}\titlerule[2pt]}] 
+
+\titleformat{\subsection}{\penalty-1000\vspace{0pt plus 20pt}{}\large\bfseries\sffamily}{\thesubsection}{1em}{} 
+
+\titleformat{\subsubsection}{\penalty-500\vspace{0pt plus 2pt}{}\bfseries\sffamily}{\thesubsubsection}{1em}{}[\vspace{-14pt}]
+\fi
+%-----------------------------------------------------------------------------
+% Remarques, objectifs, etc.
+
+\newcommand{\headcolor}{LightSkyBlue!50}
+\newtheoremstyle{exemple}%
+{9pt}{11pt}% Space above and below
+{\leftskip=12pt}% Body style
+{-12pt}% Heading indent amount
+{\normalsize\sffamily\bfseries}{}% Heading font and punctuation after it
+{\newline}% Space after heading (\newline = linebreak)
+{\setlength{\fboxsep}{2pt}\fcolorbox{LightGray}{\headcolor}{\thmname{#1}~\thmnumber{#2}}\thmnote{\bfseries~~#3\medskip}}
+
+\theoremstyle{exemple}
+\newtheorem{objectif}{Objectif}
+
+%-----------------------------------------------------------------------------
+% Figures
+
+\newcommand{\Figure}[3][scale=1]{%
+\begin{figure}[tb]
+\begin{center}
+\includegraphics[#1]{#2}
+\caption{#3}
+\end{center}
+\end{figure}
+}
+
