@@ -1,0 +1,46 @@
+\documentclass{beamer}
+\usepackage{preamble}
+
+\title[Utilisation de modules \LaTeX]
+{Utilisation de modules \LaTeX}
+
+\author{\texttt{$\backslash$usepackage\{Antoine\;de\;Lagrave\}}}
+
+\institute[]{
+    Introduction à \LaTeX{} \\
+    Département de Physique \\
+    \today
+}
+
+\titlegraphic{
+    \includegraphics[width=4cm]{./figures/logos/UdeS_logo_h_noirHR.png}
+    \hspace{1cm}
+    \includegraphics[width=3cm]{./figures/logos/h-UQTR-nb.png}
+}
+
+\date[\today]
+
+\begin{document}
+
+    \setbeamercolor*{item}{fg=black}
+
+    \frame{\titlepage}
+
+    \input{sections/context}
+
+    \begin{frame}
+        \frametitle{Table des matières}
+        \tableofcontents
+    \end{frame}
+
+    \input{sections/personnalisation}
+
+    \input{sections/physicsmaths}
+
+    \input{sections/biblio}
+
+    \input{sections/graphsfigs}
+
+    \input{sections/tipsandtricks}
+
+\end{document}

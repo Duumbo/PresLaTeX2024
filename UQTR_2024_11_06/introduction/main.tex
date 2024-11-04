@@ -1,0 +1,44 @@
+\documentclass{beamer}
+\usepackage{preamble}
+
+\title[Introduction à \LaTeX]
+{Introduction à \LaTeX}
+
+\author{Dimitri Bonanni-Surprenant \& Antoine de Lagrave}
+
+\institute[]{
+    Introduction à \LaTeX{} \\
+    Département de Physique \\
+    \today
+}
+
+\titlegraphic{
+    \includegraphics[width=4cm]{./figures/logos/UdeS_logo_h_noirHR.png}
+    \hspace{1cm}
+    \includegraphics[width=3cm]{./figures/logos/h-UQTR-nb.png}
+}
+
+\date[\today]
+
+\begin{document}
+
+    \setbeamercolor*{item}{fg=black}
+
+    \frame{\titlepage}
+
+    \input{sections/history}
+
+    \begin{frame}
+        \frametitle{Table des matières}
+        \tableofcontents
+    \end{frame}
+
+    \input{sections/relevant}
+
+    \input{sections/applied}
+
+    \input{sections/install_collab}
+
+    \input{sections/anatomie}
+
+\end{document}
