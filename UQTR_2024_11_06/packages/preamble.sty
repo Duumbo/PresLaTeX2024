@@ -1,0 +1,81 @@
+% --------------------
+% Color theme settings
+% --------------------
+\usetheme{default}
+\usecolortheme{spruce}
+
+% -----------------
+% Language settings
+% -----------------
+\usepackage[style=verbose]{biblatex}
+\usepackage[greek, english, french]{babel} % Using different languages
+
+
+% ------------
+% Bibliography
+% ------------
+\addbibresource{refs.bib}
+\renewcommand{\footnotesize}{\tiny} % resize foot citation
+
+% --------------
+% Math & Physics
+% --------------
+\usepackage{physics}
+\usepackage{mathtools}
+\usepackage{listings}
+\usepackage{dsfont}
+
+% -------------
+% Font settings
+% -------------
+\setbeamerfont{framesubtitle}{size=\small}
+\usefonttheme{serif} % default family is serif
+\usepackage[mono,vvarbb,upint]{notomath} % Font
+
+% ------------
+% TOC settings
+% ------------
+\setbeamercolor{section in toc}{fg=black}
+\setbeamertemplate{section in toc}[square]
+\setbeamercolor{section number projected}{bg=spruce_medium, fg=black} % setting the color for the section numbers within toc
+\setbeamertemplate{subsection in toc}{%
+  \vspace{0.25em}\hspace{2em}{\color{spruce_medium}\rule[0.3ex]{3pt}{3pt}}~\inserttocsubsection\par}
+
+% ----------------------
+% Global frames settings
+% ----------------------
+\beamertemplatenavigationsymbolsempty
+
+% Setting color for section titles in frames
+\setbeamercolor{frametitle}{fg=black, bg=spruce_medium}
+
+% Setting color for title and subtitle in title page
+\setbeamercolor{title}{fg=black, bg=spruce_medium}
+\setbeamercolor{subtitle}{fg=black, bg=spruce_medium}
+
+% Frame number
+\addtobeamertemplate{navigation symbols}{}{
+    \usebeamerfont{footline}
+    \usebeamercolor[hard_green]{footline}
+    \hspace{1em}
+    \insertframenumber/\inserttotalframenumber
+}
+
+% ------------------------
+% Colored Boxes and blocks
+% ------------------------
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+
+% Custom colors
+\definecolor{spruce_medium}{RGB}{195, 215, 205}
+\definecolor{hard_green}{RGB}{30, 150, 110}
+\definecolor{sweet_brown}{RGB}{202, 184, 166}
+\definecolor{sweet_refs}{RGB}{102, 122, 162}
+
+% Colored blocks
+\newenvironment{noteblock}[1]{
+    \tcolorbox[noparskip, colback=white,
+    colframe=sweet_brown, boxrule=1pt, arc=1pt, title=#1, coltitle=black]}
+    {\endtcolorbox
+}
