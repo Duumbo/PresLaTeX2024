@@ -1,6 +1,8 @@
 ## MacOS metadata
 .DS_Store
 
+notes.txt
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
